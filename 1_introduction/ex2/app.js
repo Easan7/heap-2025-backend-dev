@@ -5,14 +5,16 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
     //! (1) Set headers for HTML response
-
+    res.setHeader("Content-Type", "text/html");
     //! (2) Store and retrieve your project information
     //! - Done for you
     const projectInfo = getProjectInfo();
 
     //! (3) Get, write, and return HTML
-    //! - Get is done for you
+    //! - Get is done for you   
     const HTML = getHTML(projectInfo);
+    res.write(HTML);
+    res.end();
 });
 
 server.listen(8000, () => {

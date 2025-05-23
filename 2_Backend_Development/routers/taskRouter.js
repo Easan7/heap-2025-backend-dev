@@ -11,7 +11,11 @@ const router = express.Router();
 
 const {
   getAllTasks,
-  // TODO: Import other controller functions
+  createNewTask,
+  getDoneTasks,
+  getToDoTasks,
+  updateTaskStatus,
+  findTasksByTitle
 } = require("../controllers/taskController");
 
 // TODO: Define routes for:
@@ -25,5 +29,10 @@ const {
 // ...
 // Completed example
 router.get("/", getAllTasks);
+router.post("/createNewTask", createNewTask);
+router.get("/getDoneTasks", getDoneTasks);
+router.get("/getToDoTasks", getToDoTasks);
+router.put("/updateTaskStatus", updateTaskStatus);
+router.post("/findTasksByTitle", findTasksByTitle);
 
 module.exports = router;
